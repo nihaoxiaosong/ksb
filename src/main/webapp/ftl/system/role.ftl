@@ -111,9 +111,9 @@
 								<td>${role.name!}</td>
 								<td>
 									<#if role.enable==0>
-										<a name="change_status" href="javascript:void(0);" onclick="change_status(${role.id},1);">当前禁用<a>
+										<a name="change_status" href="javascript:void(0);" onclick="javascript:change_status(${role.id},1);">当前禁用<a>
 									<#else>
-										<a name="change_status" href="javascript:void(0);" onclick="change_status(${role.id},1);">当前启用<a>
+										<a name="change_status" href="javascript:void(0);" onclick="javascript:change_status(${role.id},1);">当前启用<a>
 									</#if>
 								</td>
 								<td>
