@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--  jquery -->
+		<script src="../../plugin/jquery/jquery-1.12.3.min.js"></script>
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="../../plugin/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../plugin/bootstrap/css/bootstrap-theme.min.css">
+		<script src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+
+		<title>理论题审核</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1 style="color: #286090;">考试宝后台管理系统
+					<small style="float: right;">欢迎您,张三. <a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>退出</a></small>
+				</h1>
+			</div>
+			<div class="row" style="height: 60px;">
+				<ul class="nav nav-pills">
+					<li role="">
+						<a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 首页</a>
+					</li>
+					<li role="">
+						<a href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> 考生管理</a>
+					</li>
+					<li role="" class="active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 试题管理 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 技能题管理</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 理论题管理</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 预选项管理</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> 试题审核</a></li>
+						</ul>
+					</li>
+					<li role="">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> 试卷管理 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 技能卷管理</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 理论卷管理</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> 试卷审核</a></li>
+						</ul>
+
+					</li>
+					<li role="">
+						<a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> 考试管理</a>
+					</li>
+					<li role="" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 系统设置 <span class="caret"></span>
+    </a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 用户管理</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-align-center" aria-hidden="true"></span> 角色管理</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 权限管理</a></li>
+						</ul>
+					</li>
+					<li role="">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 成绩查询 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> 成绩分析</a></li>
+						</ul>
+					</li>
+					<li role="" >
+						<a href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 制作考试宝</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row" style="height: 60px;">
+				<div >
+					<ol class="breadcrumb">
+						<span>您当前的位置:</span>
+						<li><a href="../../index.html">首页</a></li>
+						<li><a href="#">试题审核</a></li>
+						<li class="active">理论题审核</li>
+					</ol>
+				</div>
+			</div>
+			<div class="row">
+				<ul class="nav nav-pills">
+					<li role="presentation"><a href="#">技能提审核</a></li>
+					<li role="presentation" class="active"><a href="#">理论题审核</a></li>
+				</ul>
+			</div>
+			<div class="row">
+				<div style="margin-top: 20px;">
+					<form class="form-inline">
+					<div class="form-group">
+						<label for="type">题型:</label>
+						<select class="form-control" id="type">
+				        <option value="">请选择题型</option>
+				        <option value="">判断</option>
+				        <option value="">单选</option>
+				        <option value="">多选</option>
+				    </select>
+					</div>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="form-group">
+						<label for="status">状态:</label>
+						<select class="form-control" id="status">
+				        <option value="">请选择状态</option>
+				        <option value="">待审核</option>
+				        <option value="">审核通过</option>
+				        <option value="">审核不通过</option>
+				    </select>
+					</div>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="form-group">
+						<label for="author">创建人:</label>
+						<select class="form-control" id="author">
+				        <option value="">请选择创建人</option>
+				        <option value="">张三</option>
+				        <option value="">李四</option>
+				        <option value="">王五</option>
+				    </select>
+					</div>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="form-group">
+						<label for="keyword">关键字:</label>
+						<input class="form-control" type="text" id="keyword" placeholder="请输入提干关键字" />
+					</div>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="form-group">
+						<label for="code">试题编码:</label>
+						<input class="form-control" type="text" id="code" placeholder="请输入试题编码" />
+					</div>
+				</form>
+				</div>
+				<div style="text-align:center;margin-top: 20px;margin-bottom: 20px;">
+					<input type="button" class="btn btn-info" value="查询" />
+					<input type="button" class="btn btn-warning" value="重置" />
+				</div>
+			</div>
+			<div class="row" style="text-align:center;">
+				<table class="table table-hover">
+					<tr class="active">
+						<td><label>试题编号</label></td>
+						<td><label>题干</label></td>
+						<td><label>类型</label></td>
+						<td><label>题型</label></td>
+						<td><label>创建人</label></td>
+						<td><label>创建时间</label></td>
+						<td><label>状态</label></td>
+						<td><label>操作</label></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>增值税普票发票</td>
+						<td>理论</td>
+						<td>判断</td>
+						<td>张三</td>
+						<td>2016-05-06</td>
+						<td>待审核</td>
+						<td><input type="button" class="btn btn-info" value="审核" /></td>
+					</tr>
+				</table>
+			</div>
+			<div class="row" style="text-align:center;">
+				<nav>
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">...</a></li>
+						<li><a href="#">9</a></li>
+						<li><a href="#">10</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+						<li><a href="#">上一页</a></li>
+						<li><a href="#">下一页</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</body>
+</html>
