@@ -93,7 +93,7 @@
 				</form>
 			</div>
 			<div class="row" style="text-align:center;">
-				<input type="button" class="btn btn-info" style="margin-bottom:10px;float:left" value=" + 新增" />
+				<input type="button" class="btn btn-info" style="margin-bottom:10px;float:left" value=" + 新增" id="add_role" />
 				<table class="table table-hover">
 					<tr class="active">
 						<td><label>序号</label></td>
@@ -111,9 +111,9 @@
 								<td>${role.name!}</td>
 								<td>
 									<#if role.enable==0>
-										<a name="change_status" href="javascript:void(0);" onclick="javascript:change_status(${role.id},1);">当前禁用<a>
+										<a name="change_status" role_id="${role.id}" enable="${role.enable}" href="javascript:void(0);" style="color:red;">当前禁用<a>
 									<#else>
-										<a name="change_status" href="javascript:void(0);" onclick="javascript:change_status(${role.id},1);">当前启用<a>
+										<a name="change_status" role_id="${role.id}" enable="${role.enable}" href="javascript:void(0);">当前启用<a>
 									</#if>
 								</td>
 								<td>
@@ -135,28 +135,59 @@
 					</ul>
 				</nav>
 			</div>
+		</div>
 			
 			
-			
-			<div class="modal" id="delete_modal"  tabindex="-1">
-			    <div class="modal-dialog modal-sm">
-			    	<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-							<h4 class="modal-title">提示</h4>
-						</div>
-						<div class="modal-body">
-							<p>确认删除?</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-							<button type="button" class="btn btn-primary">删除</button>
-						</div>
+		<#-- 删除摸态框 -->
+		<div class="modal" id="delete_modal"  tabindex="-1">
+		    <div class="modal-dialog modal-sm">
+		    	<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">提示</h4>
+					</div>
+					<div class="modal-body">
+						<p>确认删除?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary">删除</button>
 					</div>
 				</div>
 			</div>
-			
 		</div>
+		<#-- 新增摸态框 -->
+		<div class="modal" id="add_modal"  tabindex="-1">
+		    <div class="modal-dialog">
+		    	<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">新增</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal">
+							<div class="form-group">
+						    	<label for="" class="col-sm-2 control-label">编码:</label>
+						    	<div class="col-sm-10">
+						      		<input type="text" class="form-control" id="role_code" placeholder="请输入角色编码">
+						    	</div>
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="" class="col-sm-2 control-label">名称:</label>
+						    	<div class="col-sm-10">
+						      		<input type="text" class="form-control" id="role_name" placeholder="请输入角色名称">
+						    	</div>
+						  	</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary" id="add_confirm">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+			
 	</body>
 	
 	<script src="<@s.url '/plugin/jquery/jquery-1.12.3.min.js'/>" type="text/javascript"></script>

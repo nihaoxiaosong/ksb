@@ -86,7 +86,7 @@
 					<tr class="active">
 						<td><label></label></td>
 						<td><label>编码</label></td>
-						<td><label>模块名称</label></td>
+						<td><label>名称</label></td>
 						<td><label>url地址</label></td>
 						<td><label>排序</label></td>
 						<td><label>操作</label></td>
@@ -158,8 +158,8 @@
 							<div class="form-group">
 						    	<label for="" class="col-sm-2 control-label">上级模块:</label>
 						    	<div class="col-sm-10">
-						      		<select class="form-control" id="">
-						      			<option>根模块</option>
+						      		<select class="form-control" id="parent_code">
+						      			<option id="000">根模块</option>
 						      			<option>考生管理</option>
 						      			<option>试题管理</option>
 						      			<option>试卷管理</option>
@@ -173,32 +173,32 @@
 							<div class="form-group">
 						    	<label for="" class="col-sm-2 control-label">编码:</label>
 						    	<div class="col-sm-10">
-						      		<input type="text" class="form-control" id="" placeholder="请输入模块编码">
+						      		<input type="text" class="form-control" id="module_code" placeholder="请输入模块编码">
 						    	</div>
 						  	</div>
 						  	<div class="form-group">
 						    	<label for="" class="col-sm-2 control-label">名称:</label>
 						    	<div class="col-sm-10">
-						      		<input type="text" class="form-control" id="" placeholder="请输入模块名称">
+						      		<input type="text" class="form-control" id="module_name" placeholder="请输入模块名称">
 						    	</div>
 						  	</div>
 						  	<div class="form-group">
 						    	<label for="" class="col-sm-2 control-label">url:</label>
 						    	<div class="col-sm-10">
-						      		<input type="text" class="form-control" id="" placeholder="请输入url地址">
+						      		<input type="text" class="form-control" id="module_url" placeholder="请输入url地址">
 						    	</div>
 						  	</div>
 						  	<div class="form-group">
 						    	<label for="" class="col-sm-2 control-label">排序:</label>
 						    	<div class="col-sm-10">
-						      		<input type="text" class="form-control" id="" placeholder="请输入在上级模块下的排序">
+						      		<input type="text" class="form-control" id="module_seq" placeholder="请输入在上级模块下的排序">
 						    	</div>
 						  	</div>
 						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<button type="button" class="btn btn-primary">保存</button>
+						<button type="button" class="btn btn-primary" id="add_confirm">保存</button>
 					</div>
 				</div>
 			</div>

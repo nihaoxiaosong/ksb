@@ -30,4 +30,19 @@ public class ModuleController extends BaseController {
 		mav.setViewName("/system/module");
 		return mav;
 	}
+	
+	@RequestMapping("/add")
+	public ModelAndView add(@RequestParam(value="parentCode",required=false)String parentCode, 
+							@RequestParam(value="code",required=false)String code,
+							@RequestParam(value="name",required=false)String name, 
+							@RequestParam(value="url",required=false)String url,
+							@RequestParam(value="seq",required=false)String seq){
+		System.err.println(parentCode+code+name+url+seq);
+		List<Module> moduleList = moduleService.findAll();
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("moduleList",moduleList);
+		mav.setViewName("/system/module");
+		return mav;
+	}
+	
 }

@@ -34,4 +34,5 @@ public interface RoleService {
 	 * @param enable 0禁用,1启用
 	 */
 	void checgeStatus(String roleId, int enable);
+
 }

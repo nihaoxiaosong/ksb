@@ -1,6 +1,7 @@
 package com.hx.controller.system;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,11 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hx.controller.base.BaseController;
-import com.hx.model.common.AjaxMessage;
 import com.hx.model.common.PageParam;
 import com.hx.model.system.Role;
 import com.hx.service.system.RoleService;
 import com.hx.util.PageUtils;
+import com.hx.util.ResponseUtil;
+
+import net.sf.json.JSONObject;
 
 @Controller
 @RequestMapping("/role")
@@ -42,9 +45,28 @@ public class RoleController extends BaseController {
 	
 	@ResponseBody
 	@RequestMapping("/changeStatus")
-	public AjaxMessage changeStatus(@RequestParam(value="roleId",required=true)String roleId, @RequestParam(value="enable",required=true)String enable){
+	public void changeStatus(@RequestParam(value="roleId",required=true)String roleId, @RequestParam(value="enable",required=true)String enable) throws Exception{
 		int status = Integer.parseInt(enable);
 		roleService.checgeStatus(roleId, status);
-		return AjaxMessage.success("操作成功!");
+		
+		JSONObject result=new JSONObject();
+		result.put("success", true);			
+		ResponseUtil.write(result, response);
 	}
+	
+	@ResponseBody
+	@RequestMapping("/add")
+	public void add(@RequestParam(value="code",required=true)String code, @RequestParam(value="name",required=true)String name) throws Exception{
+		Role role = new Role();
+		role.setId(UUID.randomUUID().toString());
+		role.setCode(code);
+		role.setName(name);
+		role.setEnable(0);
+		roleService.insert(role);
+		
+		JSONObject result=new JSONObject();
+		result.put("success", true);			
+		ResponseUtil.write(result, response);
+	}
+	
 }

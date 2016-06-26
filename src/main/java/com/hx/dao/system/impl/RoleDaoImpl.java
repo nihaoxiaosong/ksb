@@ -18,7 +18,7 @@ public class RoleDaoImpl extends BaseDao implements RoleDao {
 	
 	@Override
 	public void insert(Role role) {
-		mongoTemplate.insert(role);
+		mongoTemplate.save(role);
 	}
 
 	@Override
