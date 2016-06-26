@@ -81,9 +81,9 @@
 				</ol>
 			</div>
 			<div class="row">
-				<input type="button" class="btn btn-info" style="margin-bottom:10px;float:left" value=" + 新增" />
+				<input type="button" class="btn btn-info" id="add_module" style="margin-bottom:10px;float:left" value=" + 新增" />
 				<table class="table table-hover">
-					<tr>
+					<tr class="active">
 						<td><label></label></td>
 						<td><label>编码</label></td>
 						<td><label>模块名称</label></td>
@@ -124,9 +124,90 @@
 				</table>
 			</div>
 		</div>
+		
+		
+		
+		<#-- 删除摸态框 -->
+		<div class="modal" id="delete_modal"  tabindex="-1">
+		    <div class="modal-dialog modal-sm">
+		    	<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">提示</h4>
+					</div>
+					<div class="modal-body">
+						<p>确认删除?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary">删除</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<#-- 新增摸态框 -->
+		<div class="modal" id="add_modal"  tabindex="-1">
+		    <div class="modal-dialog">
+		    	<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">新增</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal">
+							<div class="form-group">
+						    	<label for="" class="col-sm-2 control-label">上级模块:</label>
+						    	<div class="col-sm-10">
+						      		<select class="form-control" id="">
+						      			<option>根模块</option>
+						      			<option>考生管理</option>
+						      			<option>试题管理</option>
+						      			<option>试卷管理</option>
+						      			<option>考试管理</option>
+						      			<option>系统设置</option>
+						      			<option>成绩查询</option>
+						      			<option>制作考试宝</option>
+						      		</select>
+						    	</div>
+						  	</div>
+							<div class="form-group">
+						    	<label for="" class="col-sm-2 control-label">编码:</label>
+						    	<div class="col-sm-10">
+						      		<input type="text" class="form-control" id="" placeholder="请输入模块编码">
+						    	</div>
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="" class="col-sm-2 control-label">名称:</label>
+						    	<div class="col-sm-10">
+						      		<input type="text" class="form-control" id="" placeholder="请输入模块名称">
+						    	</div>
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="" class="col-sm-2 control-label">url:</label>
+						    	<div class="col-sm-10">
+						      		<input type="text" class="form-control" id="" placeholder="请输入url地址">
+						    	</div>
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="" class="col-sm-2 control-label">排序:</label>
+						    	<div class="col-sm-10">
+						      		<input type="text" class="form-control" id="" placeholder="请输入在上级模块下的排序">
+						    	</div>
+						  	</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+			
 	</body>
 
 	<script src="<@s.url '/plugin/jquery/jquery-1.12.3.min.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/plugin/bootstrap/js/bootstrap.min.js'/>" type="text/javascript"></script>
+	<script src="<@s.url '/js/system/module.js'/>" type="text/javascript"></script>
 		
 </html>
