@@ -14,14 +14,14 @@ $(function() {
 	//删除按钮点击事件
 	$("input[name='delete_role']").click(function() {
 		//摸态框居中
-		$("#delete_modal").on('shown.bs.modal', function() {
-			var $this = $(this);
-			var $modal_dialog = $this.find('.modal-dialog');
-			var m_top = ($(document).height() - $modal_dialog.height()) / 2;
-			$modal_dialog.css({
-				'margin' : m_top + 'px auto'
-			});
-		});
+//		$("#delete_modal").on('shown.bs.modal', function() {
+//			var $this = $(this);
+//			var $modal_dialog = $this.find('.modal-dialog');
+//			var m_top = ($(document).height() - $modal_dialog.height()) / 2;
+//			$modal_dialog.css({
+//				'margin' : m_top + 'px auto'
+//			});
+//		});
 		//摸态框显示
 		$("#delete_modal").modal();
 	});
@@ -29,14 +29,14 @@ $(function() {
 	//新增按钮点击事件
 	$("#add_role").click(function(){
 		//摸态框居中
-		$("#add_modal").on('shown.bs.modal', function() {
-			var $this = $(this);
-			var $modal_dialog = $this.find('.modal-dialog');
-			var m_top = ($(document).height() - $modal_dialog.height()) / 2;
-			$modal_dialog.css({
-				'margin' : m_top + 'px auto'
-			});
-		});
+//		$("#add_modal").on('shown.bs.modal', function() {
+//			var $this = $(this);
+//			var $modal_dialog = $this.find('.modal-dialog');
+//			var m_top = ($(document).height() - $modal_dialog.height()) / 2;
+//			$modal_dialog.css({
+//				'margin' : m_top + 'px auto'
+//			});
+//		});
 		//摸态框显示
 		$("#add_modal").modal();
 	});

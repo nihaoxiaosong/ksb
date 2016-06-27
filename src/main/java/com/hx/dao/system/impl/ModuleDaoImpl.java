@@ -28,4 +28,9 @@ public class ModuleDaoImpl extends BaseDao implements ModuleDao {
 		mongoTemplate.remove(query, Module.class);
 	}
 
+	@Override
+	public void insert(Module module) {
+		mongoTemplate.insert(module);
+	}
+
 }

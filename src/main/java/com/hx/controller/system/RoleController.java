@@ -3,6 +3,8 @@ package com.hx.controller.system;
 import java.util.List;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -23,6 +25,7 @@ import net.sf.json.JSONObject;
 @Controller
 @RequestMapping("/role")
 public class RoleController extends BaseController {
+	private static final Logger LOG = LoggerFactory.getLogger(RoleController.class);
 	@Autowired
 	private RoleService roleService;
 	
@@ -35,6 +38,7 @@ public class RoleController extends BaseController {
 		List<Role> roleList = roleService.findByKeyWord(keyWord, pageParam);
 		int totalCount = roleService.count(keyWord);
 		String pageCode=PageUtils.getPagation(request.getContextPath()+"/role/list", totalCount, Integer.parseInt(page), PAGE_ZISE);
+//		LOG.info("/role/list");
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("roleList",roleList);
 		mav.addObject("keyWord", keyWord);
@@ -48,7 +52,7 @@ public class RoleController extends BaseController {
 	public void changeStatus(@RequestParam(value="roleId",required=true)String roleId, @RequestParam(value="enable",required=true)String enable) throws Exception{
 		int status = Integer.parseInt(enable);
 		roleService.checgeStatus(roleId, status);
-		
+//		LOG.info("/role/changeStatus");
 		JSONObject result=new JSONObject();
 		result.put("success", true);			
 		ResponseUtil.write(result, response);
@@ -63,7 +67,7 @@ public class RoleController extends BaseController {
 		role.setName(name);
 		role.setEnable(0);
 		roleService.insert(role);
-		
+//		LOG.info("/role/add");
 		JSONObject result=new JSONObject();
 		result.put("success", true);			
 		ResponseUtil.write(result, response);

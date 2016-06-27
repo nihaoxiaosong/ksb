@@ -16,4 +16,9 @@ public interface ModuleDao {
 	 * @param id
 	 */
 	void deleteById(String id);
+	/**
+	 * 新增模块
+	 * @param module
+	 */
+	void insert(Module module);
 }

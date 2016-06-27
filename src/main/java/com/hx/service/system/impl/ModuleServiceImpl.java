@@ -18,7 +18,7 @@ public class ModuleServiceImpl implements ModuleService {
 
 	@Override
 	public List<Module> findAll() {
-		List<Module> parentModule = moduleDao.findByParentCode("000");
+		List<Module> parentModule = moduleDao.findByParentCode("root");
 		
 		List<Module> moduleList = new ArrayList<Module>(); 
 		for (Module module : parentModule) {
@@ -32,6 +32,11 @@ public class ModuleServiceImpl implements ModuleService {
 	@Override
 	public void deleteById(String id) {
 		moduleDao.deleteById(id);
+	}
+
+	@Override
+	public void insert(Module module) {
+		moduleDao.insert(module);
 	}
 
 }

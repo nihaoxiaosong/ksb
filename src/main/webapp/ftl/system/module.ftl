@@ -102,10 +102,10 @@
 						    	<label for="" class="col-sm-2 control-label">上级模块:</label>
 						    	<div class="col-sm-10">
 						      		<select class="form-control" id="parent_code">
-						      			<option id="000">根模块</option>
-						      			<option>考生管理</option>
-						      			<option>试题管理</option>
-						      			<option>试卷管理</option>
+						      			<option id="root">根模块</option>
+						      			<option id="studentManage">考生管理</option>
+						      			<option id="questionManage">试题管理</option>
+						      			<option id="paperManage">试卷管理</option>
 						      			<option>考试管理</option>
 						      			<option>系统设置</option>
 						      			<option>成绩查询</option>
