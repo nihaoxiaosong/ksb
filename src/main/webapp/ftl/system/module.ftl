@@ -106,10 +106,10 @@
 						      			<option id="studentManage">考生管理</option>
 						      			<option id="questionManage">试题管理</option>
 						      			<option id="paperManage">试卷管理</option>
-						      			<option>考试管理</option>
-						      			<option>系统设置</option>
-						      			<option>成绩查询</option>
-						      			<option>制作考试宝</option>
+						      			<option id="examManage">考试管理</option>
+						      			<option id="systemManage">系统设置</option>
+						      			<option id="resultManage">成绩查询</option>
+						      			<option id="makeKsb">制作考试宝</option>
 						      		</select>
 						    	</div>
 						  	</div>

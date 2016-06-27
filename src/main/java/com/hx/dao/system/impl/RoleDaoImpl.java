@@ -1,7 +1,11 @@
 package com.hx.dao.system.impl;
 
+import java.util.Calendar;
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -27,6 +31,7 @@ public class RoleDaoImpl extends BaseDao implements RoleDao {
 		if(!StringUtils.isEmpty(keyWord)){
 			query.addCriteria(new Criteria("name").regex(keyWord));
 		}
+		query.with(new Sort(new Order(Direction.DESC, "createTime")));
 		query.skip(pageParam.getStartIndex()).limit(pageParam.getPageSize());
 		List<Role> list = mongoTemplate.find(query, Role.class);
 		return list;
@@ -48,7 +53,7 @@ public class RoleDaoImpl extends BaseDao implements RoleDao {
 		query.addCriteria(new Criteria("_id").is(role.getId()));
 		
 		Update update = new Update();
-		if(!StringUtils.isEmpty(role.getCode())){			
+		if(!StringUtils.isEmpty(role.getCode())){
 			update.set("code", role.getCode());
 		}
 		if(!StringUtils.isEmpty(role.getName())){
@@ -58,6 +63,13 @@ public class RoleDaoImpl extends BaseDao implements RoleDao {
 			update.set("enable", role.getEnable());
 		}
 		mongoTemplate.updateFirst(query, update, Role.class);
+	}
+
+	@Override
+	public void deleteById(String roleId) {
+		Query query = new Query();
+		query.addCriteria(new Criteria("_id").is(roleId));
+		mongoTemplate.remove(query, Role.class);
 	}
 
 }

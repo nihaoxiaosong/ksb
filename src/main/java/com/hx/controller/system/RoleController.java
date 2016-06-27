@@ -1,5 +1,6 @@
 package com.hx.controller.system;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 
@@ -66,7 +67,18 @@ public class RoleController extends BaseController {
 		role.setCode(code);
 		role.setName(name);
 		role.setEnable(0);
+		role.setCreateTime(Calendar.getInstance().getTime());
 		roleService.insert(role);
+//		LOG.info("/role/add");
+		JSONObject result=new JSONObject();
+		result.put("success", true);			
+		ResponseUtil.write(result, response);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/delete")
+	public void delete(@RequestParam(value="roleId",required=true)String roleId) throws Exception{
+		roleService.deleteById(roleId);
 //		LOG.info("/role/add");
 		JSONObject result=new JSONObject();
 		result.put("success", true);			

@@ -34,5 +34,10 @@ public interface RoleService {
 	 * @param enable 0禁用,1启用
 	 */
 	void checgeStatus(String roleId, int enable);
+	/**
+	 * 根据id删除角色信息
+	 * @param roleId
+	 */
+	void deleteById(String roleId);
 
 }

@@ -28,4 +28,9 @@ public interface RoleDao {
 	 * @param role
 	 */
 	void update(Role role);
+	/**
+	 * 根据id删除角色信息
+	 * @param roleId
+	 */
+	void deleteById(String roleId);
 }

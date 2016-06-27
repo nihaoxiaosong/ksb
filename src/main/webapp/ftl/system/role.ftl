@@ -42,6 +42,7 @@
 						<td><label>序号</label></td>
 						<td><label>编码</label></td>
 						<td><label>名称</label></td>
+						<td><label>创建时间</label></td>
 						<td><label>是否启用(点击修改状态)</label></td>
 						<td><label>操作</label></td>
 					</tr>
@@ -52,6 +53,7 @@
 								<td>${role_index+1}</td>
 								<td>${role.code!}</td>
 								<td>${role.name!}</td>
+								<td>${(role.createTime?string("yyyy/MM/dd HH:mm:ss"))!}</td>
 								<td>
 									<#if role.enable==0>
 										<a name="change_status" role_id="${role.id}" enable="${role.enable}" href="javascript:void(0);" style="color:red;">当前禁用<a>
@@ -91,10 +93,11 @@
 					</div>
 					<div class="modal-body">
 						<p>确认删除?</p>
+						<input type="hidden" id="delete_id" />
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<button type="button" class="btn btn-primary">删除</button>
+						<button type="button" class="btn btn-primary" id="delete_confirm">删除</button>
 					</div>
 				</div>
 			</div>

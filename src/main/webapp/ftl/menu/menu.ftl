@@ -11,7 +11,7 @@
 			<a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 首页</a>
 		</li>
 		<li role="">
-			<a href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> 考生管理</a>
+			<a href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> 考生管理<span class="caret"></span></a>
 		</li>
 		<li role="">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">

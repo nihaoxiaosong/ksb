@@ -24,19 +24,33 @@ $(function() {
 //		});
 		//摸态框显示
 		$("#delete_modal").modal();
+		var delete_id = $(this).attr("role_id");
+		$("#delete_id").val(delete_id);
+	});
+	
+	//删除确认按钮点击事件
+	$("#delete_confirm").click(function(){
+		var role_id = $("#delete_id").val();
+		$.ajax({
+			url: "/ksb/role/delete",
+			dataType:'json',
+			type:'post',
+			data:{
+				"roleId": role_id
+			},
+			async : true,
+			success: function(data){
+				$("#delete_id").val("");
+				location.href = "/ksb/role/list";
+			},
+			error:function(data){
+				alert("啊呀,报错了...联系 QQ 363059330...");
+			}
+		});
 	});
 	
 	//新增按钮点击事件
 	$("#add_role").click(function(){
-		//摸态框居中
-//		$("#add_modal").on('shown.bs.modal', function() {
-//			var $this = $(this);
-//			var $modal_dialog = $this.find('.modal-dialog');
-//			var m_top = ($(document).height() - $modal_dialog.height()) / 2;
-//			$modal_dialog.css({
-//				'margin' : m_top + 'px auto'
-//			});
-//		});
 		//摸态框显示
 		$("#add_modal").modal();
 	});
@@ -91,12 +105,3 @@ $(function() {
 	});
 	
 });
-
-//更改角色状态
-function change_status(roleId, enable){
-	
-}
-
-
-
-

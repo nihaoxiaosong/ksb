@@ -1,5 +1,7 @@
 package com.hx.model.system;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -29,6 +31,10 @@ public class Role {
 	 * 1启用
 	 */
 	private int enable;
+	/**
+	 * 创建时间
+	 */
+	private Date createTime;
 	public String getId() {
 		return id;
 	}
@@ -52,6 +58,12 @@ public class Role {
 	}
 	public void setEnable(int enable) {
 		this.enable = enable;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 	
 }

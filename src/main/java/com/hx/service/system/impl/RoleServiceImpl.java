@@ -41,4 +41,9 @@ public class RoleServiceImpl implements RoleService {
 		roleDao.update(role);
 	}
 
+	@Override
+	public void deleteById(String roleId) {
+		roleDao.deleteById(roleId);
+	}
+
 }
