@@ -2,6 +2,9 @@ package com.hx.dao.system.impl;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
@@ -17,6 +20,7 @@ public class ModuleDaoImpl extends BaseDao implements ModuleDao {
 	public List<Module> findByParentCode(String parentCode) {
 		Query query = new Query();
 		query.addCriteria(new Criteria("parentCode").is(parentCode));
+		query.with(new Sort(new Order(Direction.ASC, "seq")));
 		List<Module> list = mongoTemplate.find(query, Module.class);
 		return list;
 	}

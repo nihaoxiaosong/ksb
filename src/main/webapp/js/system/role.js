@@ -22,6 +22,12 @@ $(function() {
 //				'margin' : m_top + 'px auto'
 //			});
 //		});
+		var enable = $(this).attr("enable");
+		if(enable==1){
+			$(this).popover();
+			return;
+		}
+		
 		//摸态框显示
 		$("#delete_modal").modal();
 		var delete_id = $(this).attr("role_id");
@@ -110,9 +116,14 @@ $(function() {
 	});
 	//权限设置按钮点击事件
 	$("input[name='right']").click(function(){
+		var enable = $(this).attr("enable");
+		if(enable==0){
+			$(this).popover();
+			return;
+		}
+		
 		var role_id = $(this).attr("role_id");
-		alert("权限设置..."+role_id);
-		location.href = "/ksb/right/list";
+		location.href = "/ksb/right/list?roleId="+role_id;
 	});
 	
 });

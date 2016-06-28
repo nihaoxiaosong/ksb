@@ -1,6 +1,5 @@
 package com.hx.dao.system.impl;
 
-import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
@@ -70,6 +69,13 @@ public class RoleDaoImpl extends BaseDao implements RoleDao {
 		Query query = new Query();
 		query.addCriteria(new Criteria("_id").is(roleId));
 		mongoTemplate.remove(query, Role.class);
+	}
+
+	@Override
+	public Role findById(String id) {
+		Query query = new Query();
+		query.addCriteria(new Criteria("_id").is(id));
+		return mongoTemplate.findOne(query, Role.class);
 	}
 
 }

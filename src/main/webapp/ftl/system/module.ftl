@@ -37,7 +37,7 @@
 					
 					<#if  moduleList?? && moduleList?size gt 0>
 						<#list moduleList as module>
-							<#if module.seq==0>
+							<#if module.url=="">
 								<tr class="info">
 									<td></td>
 									<td>${module.code!}</td>

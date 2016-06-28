@@ -27,12 +27,7 @@
 				<form class="form-inline">
 					<div class="form-group">
 						<label for="keyWord">角色:</label>
-						<select class="form-control" id="type">
-					        <option value="">请选择角色</option>
-					        <option value="">老师</option>
-					        <option value="">学生</option>
-					        <option value="">管理员</option>
-					    </select>
+						<input class="form-control" id="role_name" role_id="${role.id!}" value="${role.name!}" readonly />
 					</div>
 				</form>
 			</div>
@@ -41,64 +36,44 @@
 					<tr class="active">
 						<td><label>模块名称</label></td>
 						<td><label>权限设置</label></td>
+						<td></td>
 					</tr>
-					<tr>
-						<td><label>考生管理</label></td>
-						<td>
-							<label><input type="checkbox">考生管理</label>
-							<label><input type="checkbox">考生管理</label>
-						</td>
-					</tr>
-					<tr>
-						<td><label>试题管理</label></td>
-						<td>
-							<label><input type="checkbox">技能提管理</label>
-							<label><input type="checkbox">理论题管理</label>
-							<label><input type="checkbox">预选项管理</label>
-							<label><input type="checkbox">试题审核</label>
-						</td>
-					</tr>
-					<tr>
-						<td><label>试卷管理</label></td>
-						<td>
-							<label><input type="checkbox">技能卷管理</label>
-							<label><input type="checkbox">理论卷管理</label>
-							<label><input type="checkbox">试卷审核</label>
-						</td>
-					</tr>
-					<tr>
-						<td><label>考试管理</label></td>
-						<td>
-							<label><input type="checkbox">考试管理</label>
-						</td>
-					</tr>
-					<tr>
-						<td><label>系统设置</label></td>
-						<td>
-							<label><input type="checkbox">用户管理</label>
-							<label><input type="checkbox">角色管理</label>
-							<label><input type="checkbox">权限管理</label>
-						</td>
-					</tr>
-					<tr>
-						<td><label>成绩查询</label></td>
-						<td>
-							<label><input type="checkbox">成绩查询</label>
-							<label><input type="checkbox">成绩分析</label>
-						</td>
-					</tr>
-					<tr>
-						<td><label>制作考试宝</label></td>
-						<td>
-							<label><input type="checkbox">制作考试宝</label>
-						</td>
-					</tr>
+					<#if moduleMapList?exists>
+						<#list moduleMapList as moudlueMap>
+						<#if moudlueMap?exists>
+							<#list moudlueMap?keys as key> 
+								<tr>
+									<td><label>${key}</label></td>
+									<td>
+									<#assign moudleList = moudlueMap[key]>
+									<#if moudleList?exists>
+									<#list moudleList as module>
+										<label><input type="checkbox" name="module" module_id="${module.id}" >${module.name}</label>
+									</#list>
+									</#if>
+									<td>
+								</tr>
+							</#list>
+						</#if>
+						</#list>
+					</#if>
+					
 				</table>
+				
+				<div class="row" style="height: 60px;">
+					<form class="form-inline">
+						<div class="form-group">
+							<input type="button" class="btn btn-default" id="back_role" value="返回" />
+							<input type="button" class="btn btn-primary" id="save_right" value="保存" />
+						</div>
+					</form>
+				</div>
+				
 			</div>
 		</div>
 	</body>
 	
 	<script src="<@s.url '/plugin/jquery/jquery-1.12.3.min.js'/>" type="text/javascript"></script>
 	<script src="<@s.url '/plugin/bootstrap/js/bootstrap.min.js'/>" type="text/javascript"></script>
-
+	<script src="<@s.url '/js/system/right.js'/>" type="text/javascript"></script>
 </html>

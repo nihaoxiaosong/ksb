@@ -62,9 +62,9 @@
 									</#if>
 								</td>
 								<td>
-									<input type="button" name="right" role_id="${role.id!}" class="btn btn-default" value="权限设置" />
+									<input type="button" name="right" role_id="${role.id!}" enable="${role.enable!}" class="btn btn-default" value="权限设置" ata-container="body" data-toggle="popover" animation="true" data-placement="left" data-content="角色禁用状态不能设置权限" />
 									<input type="button" name="update_role" role_id="${role.id!}" class="btn btn-default" value="修改" />
-									<input type="button" name="delete_role" role_id="${role.id!}" class="btn btn-warning" value="删除" />
+									<input type="button" name="delete_role" role_id="${role.id!}" enable="${role.enable!}" class="btn btn-warning" value="删除" ata-container="body" data-toggle="popover" animation="true" data-placement="right" data-content="角色启用状态不能删除" />
 								</td>
 							</tr>
 						</#list>

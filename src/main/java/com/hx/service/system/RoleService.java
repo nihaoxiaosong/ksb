@@ -39,5 +39,11 @@ public interface RoleService {
 	 * @param roleId
 	 */
 	void deleteById(String roleId);
+	/**
+	 * 根据 id 查询
+	 * @param id
+	 * @return
+	 */
+	Role findById(String id);
 
 }
