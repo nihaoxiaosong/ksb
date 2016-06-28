@@ -11,7 +11,11 @@
 			<a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 首页</a>
 		</li>
 		<li role="">
-			<a href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> 考生管理<span class="caret"></span></a>
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-education" aria-hidden="true"></span> 考生管理<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span> 考生信息</a></li>
+			</ul>
 		</li>
 		<li role="">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +38,11 @@
 
 		</li>
 		<li role="">
-			<a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> 考试管理</a>
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> 考试管理 <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 考试信息</a></li>
+			</ul>
 		</li>
 		<li role="" class="active">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -48,13 +56,18 @@
 		</li>
 		<li role="">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-				<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 成绩查询 <span class="caret"></span></a>
+				<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 成绩管理 <span class="caret"></span></a>
 			<ul class="dropdown-menu">
+				<li><a href="#"><span class="glyphicon glyphicon-indent-right" aria-hidden="true"></span> 成绩查询</a></li>
 				<li><a href="#"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> 成绩分析</a></li>
 			</ul>
 		</li>
 		<li role="">
-			<a href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 制作考试宝</a>
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 制作考试宝<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> 制作考试宝</a></li>
+			</ul>
 		</li>
 	</ul>
 </div>

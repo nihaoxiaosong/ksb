@@ -1,6 +1,7 @@
 package com.hx.model.system;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -35,6 +36,10 @@ public class Role {
 	 * 创建时间
 	 */
 	private Date createTime;
+	/**
+	 * 与该角色绑定的模块列表
+	 */
+	private List<Module> moduleList;
 	public String getId() {
 		return id;
 	}
@@ -64,6 +69,12 @@ public class Role {
 	}
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+	public List<Module> getModuleList() {
+		return moduleList;
+	}
+	public void setModuleList(List<Module> moduleList) {
+		this.moduleList = moduleList;
 	}
 	
 }

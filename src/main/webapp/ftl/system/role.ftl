@@ -62,7 +62,8 @@
 									</#if>
 								</td>
 								<td>
-									<input type="button" class="btn btn-info" value="修改" />
+									<input type="button" name="right" role_id="${role.id!}" class="btn btn-default" value="权限设置" />
+									<input type="button" name="update_role" role_id="${role.id!}" class="btn btn-default" value="修改" />
 									<input type="button" name="delete_role" role_id="${role.id!}" class="btn btn-warning" value="删除" />
 								</td>
 							</tr>

@@ -103,5 +103,16 @@ $(function() {
 			}
 		});
 	});
+	//修改按钮点击事件
+	$("input[name='update_role']").click(function(){
+		var role_id = $(this).attr("role_id");
+		alert("修改功能..."+role_id);
+	});
+	//权限设置按钮点击事件
+	$("input[name='right']").click(function(){
+		var role_id = $(this).attr("role_id");
+		alert("权限设置..."+role_id);
+		location.href = "/ksb/right/list";
+	});
 	
 });
