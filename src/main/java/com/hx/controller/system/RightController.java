@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hx.controller.base.BaseController;
@@ -27,8 +28,7 @@ public class RightController extends BaseController {
 	private ModuleService moduleService;
 	
 	@RequestMapping("/list")
-	public ModelAndView lsit(@RequestParam(value="roleId",required=false)String roleId){
-		
+	public ModelAndView list(@RequestParam(value="roleId",required=false)String roleId){
 		List<Map<String, List<Module>>> moduleMapList = moduleService.findAllWithMap();
 		Role role = roleService.findById(roleId);
 		ModelAndView mav = new ModelAndView();
@@ -36,5 +36,15 @@ public class RightController extends BaseController {
 		mav.addObject("moduleMapList", moduleMapList);
 		mav.setViewName("/system/right");
 		return mav;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/save")
+	public void save(@RequestParam(value="roleId",required=false)String roleId,
+					@RequestParam(value="moduleIds[]",required=false)List<String> moduleIds){
+		
+		roleService.update(roleId, moduleIds);
+		System.out.println(roleId);
+		System.out.println(moduleIds);
 	}
 }

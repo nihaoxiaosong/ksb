@@ -45,5 +45,11 @@ public interface RoleService {
 	 * @return
 	 */
 	Role findById(String id);
+	/**
+	 * 根据角色id去更新该角色绑定的模块
+	 * @param roleId
+	 * @param moduleIds
+	 */
+	void update(String roleId, List<String> moduleIds);
 
 }

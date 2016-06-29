@@ -51,4 +51,10 @@ public class RoleServiceImpl implements RoleService {
 		return roleDao.findById(id);
 	}
 
+	@Override
+	public void update(String roleId, List<String> moduleIds) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

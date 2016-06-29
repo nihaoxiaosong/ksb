@@ -40,21 +40,21 @@
 					</tr>
 					<#if moduleMapList?exists>
 						<#list moduleMapList as moudlueMap>
-						<#if moudlueMap?exists>
-							<#list moudlueMap?keys as key> 
-								<tr>
-									<td><label>${key}</label></td>
-									<td>
-									<#assign moudleList = moudlueMap[key]>
-									<#if moudleList?exists>
-									<#list moudleList as module>
-										<label><input type="checkbox" name="module" module_id="${module.id}" >${module.name}</label>
-									</#list>
-									</#if>
-									<td>
-								</tr>
-							</#list>
-						</#if>
+							<#if moudlueMap?exists>
+								<#list moudlueMap?keys as key> 
+									<tr>
+										<td><label>${key}</label></td>
+										<td>
+											<#assign moudleList = moudlueMap[key]>
+											<#if moudleList?exists>
+												<#list moudleList as module>
+													<label><input type="checkbox" name="module" module_id="${module.id}" >${module.name}</label>
+												</#list>
+											</#if>
+										<td>
+									</tr>
+								</#list>
+							</#if>
 						</#list>
 					</#if>
 					
